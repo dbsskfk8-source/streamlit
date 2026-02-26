@@ -8,6 +8,12 @@ graph TD
     Logic -->|데이터 처리/시각화| Streamlit[Streamlit UI]
     Streamlit -->|상호작용| User((사용자))
 
+graph TD
+    Data[@welfare_2015.csv] --> Logic[@app.py]
+    Logic -->|데이터 처리/시각화| Streamlit[Streamlit UI]
+    Streamlit -->|상호작용| User((사용자))
+
+
 📂 핵심 코드 가이드
 메인 어플리케이션: @app.py에서 전체적인 데이터 처리 로직과 Streamlit UI 구성 요소들이 정의되어 있습니다.
 분석 데이터셋: @welfare_2015.csv 파이선 코드에서 로드하여 분석하는 복지 관련 실제 데이터 파일입니다.
