@@ -56,7 +56,7 @@ def load_data(file_path):
 st.title("📊 한국복지패널 데이터 대시보드")
 
 # 파일 업로드 또는 경로 지정 (사용자가 올린 파일명 기준)
-DATA_FILE = "welfare_2015_copy.csv"
+DATA_FILE = "welfare_2015.csv"
 
 try:
     df = load_data(DATA_FILE)
@@ -99,4 +99,5 @@ with tab2:
     age_income = filtered_df.dropna(subset=['age', 'income']).groupby('age', as_index=False).agg(mean_income=('income', 'mean'))
     fig2, ax2 = plt.subplots(figsize=(10, 5))
     sns.lineplot(x='age', y='mean_income', data=age_income, ax=ax2)
+
     st.pyplot(fig2)
